@@ -13,6 +13,7 @@ class Character:
         self.running = False
         self.jump_force = 20
         self.size = 96
+        self.camera = {}
 
         self.animations = {
             "idle": {
@@ -97,12 +98,10 @@ class Character:
 
         self.animation["last"] = self.animation["current"]
 
-        print(self.y)
-
     def draw(self):
         ca = self.animations[self.animation["current"]]
 
-        c = pygame.Surface((32, 32))
+        c = pygame.Surface((32, 32), pygame.SRCALPHA)
         start = 32 * self.animation["stage"]
         image = ca["sprite"]
         c.blit(image, (0, 0), (start, 0, 32, 32))
@@ -112,7 +111,7 @@ class Character:
 
         c = pygame.transform.scale(c, (self.size, self.size))
 
-        self.screen.blit(c, (self.x, self.y))
+        self.screen.blit(c, (self.x-self.camera.x, self.y-self.camera.y))
         
         self.animation["tick"] = (self.animation["tick"] + 1) % ca["ticks"]
 
