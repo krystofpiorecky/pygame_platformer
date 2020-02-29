@@ -1,6 +1,6 @@
 class Camera:
     def __init__(self, character, width, height):
-        self.speed = 0.1
+        self.speed = 0.05
         self.character = character
         self.x = character.x + width/2
         self.y = character.y + height/2

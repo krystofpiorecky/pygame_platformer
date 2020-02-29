@@ -2,7 +2,7 @@ import pygame
 
 class Character:
     def __init__(self, screen):
-        self.x = 100
+        self.x = 1300
         self.y = 100
         self.speed = 2
         self.direction = 0
@@ -71,6 +71,10 @@ class Character:
                 self.animation["current"] = "walk"
         else:
             self.animation["current"] = "jump"
+            if self.running:
+                self.animations[self.animation["current"]]["speed"] = self.animations["run"]["speed"]
+            else:
+                self.animations[self.animation["current"]]["speed"] = self.animations["walk"]["speed"]
 
     def set_position(self, x, y):
         self.x = x

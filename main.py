@@ -24,6 +24,13 @@ obstacles = [
     Obstacle(screen, camera, -10000, 700, 20000, 10), # ground
     Obstacle(screen, camera, -100, 300, 100, 100),
     Obstacle(screen, camera, -400, 350, 100, 100),
+    Obstacle(screen, camera, -600, 300, 100, 100),
+    Obstacle(screen, camera, -800, 250, 100, 100),
+    Obstacle(screen, camera, -1000, 200, 100, 100),
+    Obstacle(screen, camera, -800, 0, 100, 100),
+    Obstacle(screen, camera, -600, -100, 400, 100),
+    Obstacle(screen, camera, -800, -300, 100, 100),
+    Obstacle(screen, camera, -10000, -500, 20000, 10), # ground
 ]
 
 while 1:
